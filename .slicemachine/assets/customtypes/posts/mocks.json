@@ -1,0 +1,103 @@
+{
+  "id": "00b0b386-6af5-40f3-82a1-4a849cf21d76",
+  "uid": "ut-velit-non",
+  "type": "posts",
+  "data": {
+    "title": [
+      {
+        "type": "heading1",
+        "text": "Reinvent integrated infrastructures",
+        "spans": []
+      }
+    ],
+    "subtitle": [
+      {
+        "type": "heading2",
+        "text": "Aggregate customized web services",
+        "spans": []
+      }
+    ],
+    "author": [
+      {
+        "type": "paragraph",
+        "text": "Nulla veniam dolore minim. Anim deserunt anim dolore esse aliquip veniam consequat dolor ut non consectetur voluptate minim.",
+        "spans": []
+      }
+    ],
+    "banner": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8?w=900&h=500&fit=crop"
+    },
+    "content": [
+      {
+        "heading": [
+          {
+            "type": "heading1",
+            "text": "Revolutionize vertical methodologies",
+            "spans": []
+          }
+        ],
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Non deserunt elit deserunt Lorem cupidatat consectetur consequat anim ipsum. Aute veniam proident consequat labore dolore aliqua pariatur nisi reprehenderit deserunt ex fugiat duis nostrud.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": [
+          {
+            "type": "heading1",
+            "text": "Exploit real-time architectures",
+            "spans": []
+          }
+        ],
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Voluptate sunt labore Lorem elit sit sit laborum amet do eu sint. Deserunt et aliqua elit sunt adipisicing aliqua deserunt adipisicing proident laborum sit incididunt reprehenderit.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": [
+          {
+            "type": "heading1",
+            "text": "Matrix front-end e-tailers",
+            "spans": []
+          }
+        ],
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Enim elit qui consectetur est enim esse sunt duis quis incididunt minim. Eiusmod est irure labore. Culpa laborum irure reprehenderit veniam do excepteur nisi esse dolore aliquip aliqua quis laboris.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": [
+          {
+            "type": "heading1",
+            "text": "Redefine value-added interfaces",
+            "spans": []
+          }
+        ],
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Mollit dolore aute proident dolore.",
+            "spans": []
+          }
+        ]
+      }
+    ]
+  }
+}
