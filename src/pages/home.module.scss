@@ -1,1 +1,23 @@
-// TODO
+.posts {
+  margin: 4rem 0 0 0;
+  color: var(--body);
+
+  a {
+    display: block;
+  }
+
+  button {
+    color: var(--highlight);
+    background: transparent;
+    border: none;
+    margin-top: 1rem;
+    font-size: 1.12rem;
+    font-weight: bolder;
+
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+}

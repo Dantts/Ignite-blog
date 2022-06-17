@@ -1,1 +1,39 @@
-// TODO
+.banner {
+  width: 100%;
+}
+
+.post {
+  margin-bottom: 5rem;
+  h2 {
+    font-size: 2.25rem;
+    color: var(--heading);
+    margin: 2rem 0;
+  }
+
+  p,
+  span,
+  a,
+  ul {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin: 1.8rem 0;
+    text-align: justify;
+  }
+
+  a {
+    color: var(--highlight);
+  }
+
+  strong {
+    font-weight: 700;
+    color: var(--body);
+  }
+
+  ul {
+    padding-left: 1.5rem;
+
+    li {
+      margin: 0.5rem 0;
+    }
+  }
+}

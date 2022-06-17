@@ -1,0 +1,41 @@
+{
+  "id": "f388fd2e-509f-40de-bc83-ba8bd113ffaa",
+  "uid": "corporis-a-qui",
+  "type": "publications",
+  "data": {
+    "title": "transform mission-critical networks",
+    "subtitle": "synthesize virtual e-commerce",
+    "author": "matrix cross-media eyeballs",
+    "banner": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1560762484-813fc97650a0?w=900&h=500&fit=crop"
+    },
+    "content": [
+      {
+        "heading": "revolutionize enterprise platforms",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Pariatur anim excepteur laborum consequat proident eu commodo ea ea exercitation non elit. Exercitation fugiat minim labore dolor elit amet est.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": "transform cross-media platforms",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Eu ullamco incididunt id deserunt commodo adipisicing. Do magna ut proident proident nulla minim tempor sit dolor non adipisicing proident in id minim.",
+            "spans": []
+          }
+        ]
+      }
+    ]
+  }
+}

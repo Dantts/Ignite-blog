@@ -1,0 +1,62 @@
+.postContent {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: flex;
+    margin-bottom: 4rem;
+
+    span,
+    time {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      font-size: 0.875rem;
+
+      svg {
+        margin-right: 0.5rem;
+      }
+
+      & + span {
+        margin-left: 1.625rem;
+      }
+    }
+  }
+
+  & + & {
+    border: 1px solid gray;
+  }
+}
+
+.postContainerWithoutLink {
+  h1 {
+    font-size: 3rem;
+    color: var(--heading);
+    margin-bottom: 1.5rem;
+  }
+}
+
+.postContainerWithLink {
+  cursor: pointer;
+  h1 {
+    font-size: 2rem;
+    color: var(--heading);
+    margin-bottom: 1rem;
+    transition: color 0.2s;
+  }
+  h2 {
+    font-size: 1.5rem;
+    color: var(--info);
+    margin-bottom: 1rem;
+  }
+
+  &:hover {
+    h1 {
+      color: var(--highlight);
+    }
+  }
+}

@@ -1,10 +1,18 @@
 import { GetStaticProps } from 'next';
+import { useEffect, useState } from 'react';
+import Header from '../components/Header';
 import Head from 'next/head';
+
+import { FiCalendar, FiUser } from 'react-icons/fi';
 
 import { getPrismicClient } from '../services/prismic';
 
 import commonStyles from '../styles/common.module.scss';
 import styles from './home.module.scss';
+import Link from 'next/link';
+import { format } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR/index.js';
+import CardPublication from '../components/CardPublication';
 
 interface Post {
   uid?: string;
@@ -26,22 +34,62 @@ interface HomeProps {
 }
 
 export default function Home({ postsPagination }: HomeProps) {
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [nextPage, setNextPage] = useState(postsPagination.next_page);
+
+  useEffect(() => {
+    setPosts(formatPosts(postsPagination.results));
+  }, []);
+
+  const formatPosts = (posts: Post[]) => {
+    return posts.map(post => {
+      return {
+        ...post,
+        first_publication_date: format(
+          new Date(post.first_publication_date),
+          'dd MMM yyyy',
+          {
+            locale: ptBR,
+          }
+        ),
+      };
+    });
+  };
+
+  async function handleNextPage(): Promise<void> {
+    fetch(nextPage)
+      .then(response => response.json())
+      .then((data: PostPagination) => {
+        setPosts(formatPosts([...posts, ...data.results]));
+        setNextPage(data.next_page);
+      });
+  }
+
   return (
     <>
       <Head>
-        <title>Home | SpaceTravaling</title>
+        <title> Home | spacetraveling </title>
       </Head>
-      <main>
-        {postsPagination.results.map(post => (
-          <section key={post.uid}>
-            <h1>{post.data.title}</h1>
-            <p>{post.data.subtitle}</p>
-            <div>
-              <time>{post.first_publication_date}</time>
-              <span>{post.data.author}</span>
-            </div>
-          </section>
-        ))}
+
+      <main className={commonStyles.container}>
+        <article className={styles.posts}>
+          {posts.map(post => (
+            <CardPublication
+              key={post.uid}
+              uid={post.uid}
+              title={post.data.title}
+              subtitle={post.data.subtitle}
+              author={post.data.author}
+              formattedDate={post.first_publication_date}
+            />
+          ))}
+
+          {nextPage && (
+            <button type="button" onClick={handleNextPage}>
+              Carregar mais posts
+            </button>
+          )}
+        </article>
       </main>
     </>
   );
@@ -49,26 +97,14 @@ export default function Home({ postsPagination }: HomeProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const prismic = getPrismicClient({});
-  const postsResponse = await prismic.getByType('ignews-publication');
-
-  const postsResults = postsResponse.results.map(post => {
-    return {
-      uid: post.uid,
-      first_publication_date: post.first_publication_date,
-      data: {
-        title: post.data.title[0].text,
-        subtitle: 'Adicionar depois',
-        author: 'Dantts',
-      },
-    };
-  });
+  const post: PostPagination = (await prismic.getByType('publications', {
+    pageSize: 1,
+  })) as unknown as PostPagination;
 
   const postsPagination: PostPagination = {
-    next_page: postsResponse.next_page,
-    results: postsResults,
+    next_page: post.next_page,
+    results: post.results,
   };
-
-  console.log(JSON.stringify(postsResponse, null, 2));
 
   return {
     props: {
